@@ -8,7 +8,7 @@ public class DepositAccount extends ClientAccount{
         this.maxDeposit = maxDeposit;
         this.accountOwner = accountOwner;
         this.accountNumber = accountNumber;
-        this.status = "opened";
+        this.status = StatusAccount.OPEN;
         this.openDate = "today";
     }
 

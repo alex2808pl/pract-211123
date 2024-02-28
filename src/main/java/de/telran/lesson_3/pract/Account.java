@@ -1,10 +1,12 @@
 package de.telran.lesson_3.pract;
 
-public abstract class Account {
+import de.telran.lesson_3.pract.interfaces.Owner;
+
+public abstract class Account implements Owner {
 
     protected String accountNumber; //IBAN
     protected double balance;
-    protected String status;
+    protected StatusAccount status; //закрыт, приостановлен, открыт
     protected String openDate;
     protected String closeDate;
 
@@ -12,17 +14,13 @@ public abstract class Account {
 
     public abstract void addBalance(double sum);
 
-    public void setStatus(String status) {
-        if (status.equals("opened") || status.equals("closed") || status.equals("frozen")){
+    public void setStatus(StatusAccount status) {
             this.status = status;
-        } else {
-            System.out.println("Incorrect status, try again.");
-        }
     }
 
     public void closeAccount(String closeDate) {
         if (balance == 0) {
-            this.status = "closed";
+            this.status = StatusAccount.CLOSE;
             this.closeDate = closeDate;
             System.out.println("Your account is closed");
         } else {
