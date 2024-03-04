@@ -34,7 +34,7 @@ public class SimpleAccount {
         cardAccount.addBalance(1000);
         System.out.println(cardAccount);
 
-        // ограничили доступ с помощью интерфейса только конкретнім поведением
+        // ограничили доступ с помощью интерфейса только конкретным поведением
         Owner owner1 = new DepositAccount(1000, "Ivan", "1234567890123456");
         Owner owner2 = depositAccount;
 

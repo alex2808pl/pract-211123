@@ -1,6 +1,8 @@
 package de.telran.lesson_2;
 
 public class SimplePegas {
+
+
     public static void main(String[] args) {
         Horse horse1 = new Horse();
         System.out.println(horse1);
@@ -23,6 +25,8 @@ public class SimplePegas {
         swUnicorn1.fight();
         swUnicorn1.swim();
         System.out.println(swUnicorn1);
+
+
 
     }
 }
