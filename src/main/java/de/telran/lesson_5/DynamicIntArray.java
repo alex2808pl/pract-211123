@@ -67,6 +67,14 @@ public class DynamicIntArray {
         length--;
     }
 
+    public void deleteValue (int value) {
+        for (int i = 0; i < arr.length; i++) {
+            if(arr[i]==value) {
+                delete(i);
+            }
+        }
+    }
+
     public void insert (int index, int element) {
         if (length < capacity) {
             for (int i = capacity - 1; i > index; i--) {
@@ -99,6 +107,10 @@ public class DynamicIntArray {
             oldArr[start] = newElements[i];
             start++;
         }
+    }
+
+    public int getLength() {
+        return length;
     }
 }
 
