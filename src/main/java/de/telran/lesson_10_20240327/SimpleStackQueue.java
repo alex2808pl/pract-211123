@@ -1,6 +1,6 @@
 package de.telran.lesson_10_20240327;
 
-public class Main {
+public class SimpleStackQueue {
     public static void main(String[] args) {
         BrickPack brickPack1 = new BrickPack(1, 1000);
         BrickPack brickPack2 = new BrickPack(2, 2000);
