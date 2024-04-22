@@ -50,11 +50,27 @@ public class SimpleManager {
 
 
         System.out.println("Получить список сотрудников из отдела Boss и увеличить зп на 15% ");
+        System.out.println("С изменением текущих данных");
 
         System.out.println(managerList.stream()
                 .filter(manager -> manager.getDepartmen().startsWith("Boss"))
                 .peek(manager -> manager.setSalary(manager.getSalary() * 1.15))
                 .toList());
+
+        System.out.println("Без изменения текущих данных (Выводим только суммы)");
+
+        System.out.println(managerList.stream()
+                .filter(manager -> manager.getDepartmen().startsWith("Boss"))
+                .map(manager ->manager.getSalary() * 1.15)
+                .toList());
+
+        System.out.println("Без изменения текущих данных (Выводим cотрудников и новые  суммы)");
+
+        System.out.println(managerList.stream()
+                .filter(manager -> manager.getDepartmen().startsWith("Boss"))
+                .map(manager -> new Manager(manager.getName(), manager.getPosition(),manager.getDepartmen(),manager.getSalary() * 1.15))
+                .toList());
+
 
         System.out.println("Получить сотрудника с самой низкой зп ");
 
@@ -71,9 +87,36 @@ public class SimpleManager {
                 .max(Comparator.comparing(Manager::getSalary)));
 
 
+        //Получите сотрудников из всех отделов с максимальной зп
+        System.out.println("Получите сотрудников из всех отделов с максимальной зп");
 
+        System.out.println(" Количество человек в каждом департаменте");
+        System.out.println(managerList.stream()
+               .collect(Collectors.groupingBy(d -> d.getDepartmen(), Collectors.counting()))); //
 
-        
+        System.out.println("Получите сотрудников из всех отделов с максимальной зп");
+        System.out.println(managerList.stream()
+                .collect(Collectors.groupingBy(Manager::getDepartmen, Collectors.maxBy(Comparator.comparingDouble(Manager::getSalary)))));
+
+        System.out.println(" Сгрупировать сотрудников по должности");
+
+        System.out.println(managerList.stream()
+                .collect(Collectors.groupingBy(m -> m.getPosition())));
+
+        System.out.println("--");
+
+      Map<String, List<Manager>> groupMap =  managerList.stream()
+                .collect(Collectors.groupingBy(m -> m.getDepartmen()));
+
+      for (Map.Entry entry : groupMap.entrySet()){
+          System.out.println(entry);
+      }
+
+        System.out.println(" Вывести имена людей по департаментам");
+        System.out.println(managerList.stream()
+                .collect(Collectors.groupingBy(m -> m.getDepartmen(),
+                        Collectors.mapping(o -> o.getName(), Collectors.toList()))));
+
 
     }
 }
