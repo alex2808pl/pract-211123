@@ -117,6 +117,34 @@ public class SimpleManager {
                 .collect(Collectors.groupingBy(m -> m.getDepartmen(),
                         Collectors.mapping(o -> o.getName(), Collectors.toList()))));
 
+        System.out.println(" Вывести имена людей по департаментам одной строкой");
+        System.out.println(managerList.stream()
+                .collect(Collectors.groupingBy(m -> m.getDepartmen(),
+                        Collectors.mapping(o -> o.getName(), Collectors.joining(", ", "<",">")))));
+
+
+
+        System.out.println(" Вывести обобщенную информацию по департаментам");
+        Map<String, DoubleSummaryStatistics> summarizingMap = managerList.stream()
+                .collect(Collectors.groupingBy(m -> m.getDepartmen(),
+                        Collectors.summarizingDouble(Manager::getSalary)));
+
+        System.out.println("Максимальная зп Boss: " + summarizingMap.get("Boss").getMax());
+
+        System.out.println("Средняя зп Planing: " + summarizingMap.get("Planing").getAverage());
+
+
+        System.out.println(managerList.stream()
+                .collect(Collectors.groupingBy(m -> m.getDepartmen(),
+                        Collectors.averagingDouble(Manager::getSalary))));
+
+        System.out.println(managerList.stream()
+                .collect(Collectors.groupingBy(m -> m.getDepartmen(),
+                        Collectors.groupingBy(Manager::getPosition))));
+
+        System.out.println(managerList.stream()
+                .collect(Collectors.groupingBy(m -> m.getDepartmen(),
+                        Collectors.groupingBy(Manager::getPosition, Collectors.mapping(Manager::getName, Collectors.toList())))));
 
     }
 }
