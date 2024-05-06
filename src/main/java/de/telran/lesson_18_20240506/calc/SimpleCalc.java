@@ -13,5 +13,13 @@ public class SimpleCalc {
         System.out.println(calculator3.sub(10.5, 15.6));
         System.out.println(calculator3.multi(10.5, 15.6));
         System.out.println(calculator3.div(10.5, 15.6));
+        System.out.println("-------------");
+
+        NumericalOperations<Float> calcFloat = new CalcFloat();
+        System.out.println(calcFloat.add(100.99F, 150.48F));
+        System.out.println(calcFloat.sub(100.99F, 150.48F));
+        System.out.println(calcFloat.multi(100.99F, 150.48F));
+        System.out.println(calcFloat.div(100.99F, 150.48F));
+
     }
 }
