@@ -1,6 +1,6 @@
-package de.telran.lesson_18_20240605;
+package de.telran.lesson_18_20240506.calc;
 
-public class CalcFloat implements NumericalOperations<Float>{
+public class CalcFloat implements NumericalOperations<Float> {
     @Override
     public Float add(Float a, Float b) {
         return a+b;
