@@ -1,0 +1,23 @@
+package org.example.practice18;
+
+public class CalcByte implements NumericalOperations<Byte>{
+    @Override
+    public Byte add(Byte a, Byte b) {
+        return (byte) (a+b);
+    }
+
+    @Override
+    public Byte sub(Byte a, Byte b) {
+        return (byte) (a-b);
+    }
+
+    @Override
+    public Byte multi(Byte a, Byte b) {
+        return (byte) (a*b);
+    }
+
+    @Override
+    public Byte div(Byte a, Byte b) {
+        return (byte) (a/b);
+    }
+}
