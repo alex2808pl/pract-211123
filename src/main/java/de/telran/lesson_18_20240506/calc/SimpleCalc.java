@@ -7,5 +7,12 @@ public class SimpleCalc {
         System.out.println(calc.sub(10, 16));
         System.out.println(calc.multi(10, 16));
         System.out.println(calc.div(10, 16));
+
+        NumericalOperations<Short> calc1 = new Calcshort();
+
+        System.out.println(calc1.add((short) 10, (short) 16));
+        System.out.println(calc1.sub((short) 10, (short) 16));
+        System.out.println(calc1.multi((short) 10, (short) 16));
+        System.out.println(calc1.div((short) 10, (short) 16));
     }
 }
