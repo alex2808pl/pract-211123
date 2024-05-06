@@ -25,5 +25,4 @@ public class Calcshort implements NumericalOperations<Short> {
         }
         return (short) (a / b);
     }
-
 }
