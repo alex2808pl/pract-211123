@@ -21,5 +21,11 @@ public class SimpleCalc {
         System.out.println(calcFloat.multi(100.99F, 150.48F));
         System.out.println(calcFloat.div(100.99F, 150.48F));
 
+        NumericalOperations<Long> calcLong = new CalcLong();
+        System.out.println(calcLong.add(12L, 2L ));
+        System.out.println(calcLong.sub(10L, 16L));
+        System.out.println(calcLong.multi(10L, 16L));
+        System.out.println(calcLong.div(10L, 16L));
+
     }
 }
