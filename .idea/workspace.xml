@@ -41,10 +41,10 @@
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Application.SimpleCalc.executor": "Run",
+    "Application.de.telran.lesson_18_20240506.calc.SimpleCalc.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/irina/IdeaProjects/pract-211123/src/main/java/de/telran"
   }
