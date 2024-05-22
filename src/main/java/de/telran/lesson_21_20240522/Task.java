@@ -1,4 +1,4 @@
-package de.telran.lesson_21_2024_05_22;
+package de.telran.lesson_21_20240522;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
