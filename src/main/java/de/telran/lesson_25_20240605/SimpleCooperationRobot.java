@@ -17,10 +17,5 @@ public class SimpleCooperationRobot {
 
         threadPut.join();
         threadPop.join();
-
-
-//        Thread.sleep(5000);
-
-
     }
 }

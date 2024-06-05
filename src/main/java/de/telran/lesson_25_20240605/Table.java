@@ -6,23 +6,21 @@ public class Table {
     public synchronized void put(String box) throws InterruptedException {
         if (this.box != null) {
             wait();
-        } else {
-            this.box = box;
-            System.out.println("+ Ложим на стол коробку - " + box);
-            notify();
         }
+        this.box = box;
+        System.out.println("+ Ложим на стол коробку - " + box);
+        notify();
+
     }
 
     public synchronized String pop() throws InterruptedException {
-        if (this.box != null) {
-            String returnBox = box;
-            box = null;
-            System.out.println("- Забираем со стола - " + returnBox);
-            notify();
-            return returnBox;
-        } else {
+        if (this.box == null) {
             wait();
         }
-        return box;
+        String returnBox = box;
+        box = null;
+        System.out.println("- Забираем со стола - " + returnBox);
+        notify();
+        return returnBox;
     }
 }
