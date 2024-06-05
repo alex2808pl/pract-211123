@@ -12,15 +12,17 @@ public class Table {
             }
         } else {
             this.box = box;
+            System.out.println("Ложим на стол коробку - "+box);
             notify();
         }
     }
 
     public synchronized String pop() {
         if (this.box != null) {
-            String returnBox = box;
+             String returnBox = box;
              box = null;
-            notify();
+             System.out.println("Забираем со стола - "+returnBox);
+             notify();
              return returnBox;
         } else {
             try {

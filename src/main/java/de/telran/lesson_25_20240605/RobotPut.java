@@ -14,15 +14,14 @@ public class RobotPut implements Runnable {
     public void run() {
         while (true) {
             if (!Thread.interrupted()) {
-                String id = UUID.randomUUID().toString();
-                table.put(id);
-                System.out.println(Thread.currentThread().getName() + " puts UUID - " + id);
                 try {
                     Thread.sleep(100);
                 } catch (InterruptedException e) {
-                    System.out.println(Thread.currentThread().getName()+ " is awaik");
+                    System.out.println(Thread.currentThread().getName() + " is awaik");
                     return;
                 }
+                String id = UUID.randomUUID().toString();
+                table.put(id);
             } else {
                 System.out.println(Thread.currentThread().getName() + " your work is finished");
                 return;
