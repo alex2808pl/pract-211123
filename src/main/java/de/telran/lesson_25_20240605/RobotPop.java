@@ -10,16 +10,16 @@ public class RobotPop implements Runnable {
     @Override
     public void run() {
         while (true) {
-            if (!Thread.interrupted()){
+            if (!Thread.interrupted()) {
                 try {
                     Thread.sleep(100);
+                    String box = table.pop();
                 } catch (InterruptedException e) {
-                    System.out.println(Thread.currentThread().getName()+ " is awaik");
+                    System.out.println(Thread.currentThread().getName() + " спал и остановлен");
                     return;
                 }
-                String box = table.pop();
-            }else {
-                System.out.println(Thread.currentThread().getName() + " your work is finished");
+            } else {
+                System.out.println(Thread.currentThread().getName() + " спал и остановлен");
                 return;
             }
 
