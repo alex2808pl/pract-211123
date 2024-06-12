@@ -41,36 +41,7 @@ private int sum;
         return sum;
     }
 
-//    @Override
-//    public void runНДС() {
-//        List<Cafe> cafeList =  new ArrayList<>();
-//        double result;
-//        int sum = 0;
-//        for (Cafe elem : cafeList) {
-//            sum+= elem.getSum();
-//        }
-//        result = (sum*0.15);
-//        result= sum*0.02;
-//        result= sum*0.01;
-//        result= sum*0.10;
-//        result= sum*0.20;
-//        result= sum*0.10;
-//        System.out.println(result);
-//    }
-//    @Override
-//    public void runAlcohol() {
-//
-//    } @Override
-//    public void runProducts() {
-//
-//    } @Override
-//    public void runSnack() {
-//
-//    } @Override
-//    public void runНДС() {
-//
-//    } @Override
-//    public void runНДС() {
-//
-//    }
+    public Menu getMenu() {
+        return menu;
+    }
 }
