@@ -30,34 +30,4 @@ public class Student {
     void party(){
         System.out.println(isDrinking() ? "Можно ли наливать алкоголь" : "Нельзя наливать алкоголь");
     }
-
-
-    public static void main(String[] args) {
-        Student student1 = new Student("Vasya", "21_11", 19);
-        Class<?> studentClass = student1.getClass();
-        if (studentClass.isAnnotationPresent(BadCode.class)) {
-            System.out.print(studentClass.getSimpleName() + "; ");
-            BadCode badCode = studentClass.getAnnotation(BadCode.class);
-            System.out.println(badCode.name() + "; " + badCode.comment());
-        }
-
-        Field[] declaredFields = studentClass.getDeclaredFields();
-        for (Field field : declaredFields) {
-            if(field.isAnnotationPresent(BadCode.class)) {
-                System.out.print(field.getName() + "; ");
-                BadCode badCode = field.getAnnotation(BadCode.class);
-                System.out.println(badCode.name() + "; " + badCode.comment());
-            }
-        }
-
-        Method[] declaredMethods = studentClass.getDeclaredMethods();
-        for (Method method : declaredMethods) {
-            if (method.isAnnotationPresent(BadCode.class)) {
-                System.out.print(method.getName() + "; ");
-                BadCode badCode = method.getAnnotation(BadCode.class);
-                System.out.println(badCode.name() + "; " + badCode.comment());
-            }
-
-        }
-    }
 }
