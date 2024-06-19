@@ -1,9 +1,11 @@
-package de.telran.lesson_29_20240619.inter;
+package de.telran.lesson_29_20240619.inter.factory;
+
+import de.telran.lesson_29_20240619.inter.MessageProvider;
+import de.telran.lesson_29_20240619.inter.MessageRenderer;
 
 import java.util.Properties;
 
 public class MessageSupportFactory {
-
     private static MessageSupportFactory instance;
     private Properties props;
     private MessageRenderer renderer;
@@ -21,20 +23,21 @@ public class MessageSupportFactory {
             ex.printStackTrace();
         }
     }
-        static {
-            instance = new MessageSupportFactory();
-        }
 
-        public static MessageSupportFactory getInstance() {
-            return instance;
-        }
+    static {
+        instance = new MessageSupportFactory();
+    }
 
-        public MessageRenderer getMessageRenderer () {
-            return renderer;
-        }
+    public static MessageSupportFactory getInstance() {
+        return instance;
+    }
 
-        public MessageProvider getMessageProvider () {
-            return provider;
-        }
+    public MessageRenderer getMessageRenderer() {
+        return renderer;
+    }
+
+    public MessageProvider getMessageProvider() {
+        return provider;
+    }
 
 }
